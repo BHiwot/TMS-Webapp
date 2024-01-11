@@ -22,8 +22,8 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="home">
-      <div className="workouts">
+    <div>
+      <div>
         {organizations && organizations.map(organization => (
           <OrgDetail key={organization._id} organization={organization}  />
         ))}

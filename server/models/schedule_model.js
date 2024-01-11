@@ -18,6 +18,10 @@ const SchedSchema = new Schema({
     trainer: {
         type: String,
         required: true
+    },
+    room: {
+        type: Number,
+       
     }
 }, { timestamps: true })
 

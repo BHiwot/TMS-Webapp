@@ -1,6 +1,6 @@
 import { useState } from 'react'
-
-
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const TraineeForm = () => {
   const [firstName, setFname] = useState('')
@@ -48,59 +48,40 @@ const TraineeForm = () => {
 
   return (
    
-    <form className="create" onSubmit={handleSubmit}> 
-
-      <h3>Add a New Trainee</h3>
-
-      <label>First Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setFname(e.target.value)} 
-        value={firstName}
-      />
-      <label>Middle Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setMname(e.target.value)} 
-        value={middleName}
-      />
-      <label>Last Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setLname(e.target.value)} 
-        value={lastName}
-      />
-
-<label>Organization Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setOrg(e.target.value)} 
-        value={orgName}
-      />
-
-<label>Trainee Phone No:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setPhone(e.target.value)} 
-        value={traineePhone}
-      />
-      <label>Trainee Position :</label>
-      <input 
-        type="text" 
-        onChange={(e) => setPos(e.target.value)} 
-        value={traineePosition}
-      />
-
-<label>Training Schedule :</label>
-      <input 
-        type="text" 
-        onChange={(e) => setSch(e.target.value)} 
-        value={schedule}
-      />
-
-      
-
-      <button>Add </button>
+    <form  onSubmit={handleSubmit}> 
+       <Form.Group className = "mb-3" controlId = "fname">
+          <Form.Label>First Name </Form.Label>
+          <Form.Control type  = "text" placeholder = "First Name"  onChange = {(e) => setFname(e.target.value)}
+                    value = {firstName}/>
+          </Form.Group> 
+       <Form.Group className = "mb-3" controlId = "mname">
+          <Form.Label>Middle Name </Form.Label>
+          <Form.Control type  = "text" placeholder = "Middle Name"  onChange = {(e) => setMname(e.target.value)}
+                    value = {middleName}/>
+          </Form.Group> 
+        <Form.Group className = "mb-3" controlId = "mname">
+          <Form.Label>Last Name </Form.Label>
+          <Form.Control type  = "text" placeholder = "Last Name"  onChange = {(e) => setLname(e.target.value)}
+                    value = {lastName}/>
+          </Form.Group>
+      <Form.Group className = "mb-3" controlId = "org">
+          <Form.Label>Organization Name</Form.Label>
+          <Form.Control type  = "text" placeholder = "Organization"  onChange = {(e) => setOrg(e.target.value)}
+                    value = {orgName}/>
+          </Form.Group>
+       <Form.Group className = "mb-3" controlId = "phone">
+          <Form.Label>Trainee Phone</Form.Label>
+          <Form.Control type  = "Number" placeholder = "Trainee Phone"  onChange = {(e) => setPhone(e.target.value)}
+                    value = {traineePhone}/>
+          </Form.Group>
+      <Form.Group className = "mb-3" controlId = "position">
+          <Form.Label>Position</Form.Label>
+          <Form.Control type  = "text" placeholder = "Position"  onChange = {(e) => setPos(e.target.value)}
+                    value = {traineePosition}/>
+          </Form.Group>
+          <Button variant = "primary" type = "submit">
+              Submit
+          </Button>
       {error && <div className="error">{error}</div>}
     </form>
   )

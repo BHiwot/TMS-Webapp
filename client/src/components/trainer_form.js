@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const TrainerForm = () => {
   const [trainerName, setTrain] = useState('')
@@ -31,20 +34,17 @@ const TrainerForm = () => {
   }
 
   return (
-    <form className="create" onSubmit={handleSubmit}> 
-      <h3>Add a New Trainer</h3>
+    <form       onSubmit  = {handleSubmit}>
+    <Form.Group className = "mb-3" controlId = "trainer">
+          <Form.Label>Trainer Name</Form.Label>
+          <Form.Control type  = "text" placeholder = "Trainer"  onChange = {(e) => setTrain(e.target.value)}
+                        value = {trainerName}/>
+          </Form.Group>  
 
-      <label>Trainer Name:</label>
-      <input 
-        type="text" 
-        onChange={(e) => setTrain(e.target.value)} 
-        value={trainerName}
-      />
-
-      
-
-      <button>Add </button>
-      {error && <div className="error">{error}</div>}
+          <Button variant = "primary" type = "submit">
+              Submit
+          </Button>
+          {error && <div className="error">{error}</div>}
     </form>
   )
 }

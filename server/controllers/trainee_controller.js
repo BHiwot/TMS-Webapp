@@ -12,12 +12,12 @@ const getTrainee = async (req, res) => {
 // create  Trainee
 const createTrainee = async (req, res) => {
     
-    const {firstName, middleName, lastName, orgName, traineePhone, traineePosition, schedule} = req.body
+    const {firstName, middleName, lastName, orgName, traineePhone, traineePosition, courseRequest} = req.body
     
 
     // add doc to db
     try {
-        const trainee = await Trainee.create({firstName, middleName, lastName, orgName, traineePhone, traineePosition, schedule})
+        const trainee = await Trainee.create({firstName, middleName, lastName, orgName, traineePhone, traineePosition, courseRequest})
         
         res.status(200).json(trainee)
     } catch (error) {

@@ -12,12 +12,12 @@ const getSchedule = async (req, res) => {
 // create  Schedule
 const createSchedule = async (req, res) => {
     
-    const {course, startDate, endDate, trainer} = req.body
+    const {course, startDate, endDate, trainer, room} = req.body
     
 
     // add doc to db
     try {
-        const schedule = await Schedule.create({course, startDate, endDate, trainer})
+        const schedule = await Schedule.create({course, startDate, endDate, trainer, room})
         
         res.status(200).json(schedule)
     } catch (error) {

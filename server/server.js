@@ -16,6 +16,7 @@ const courseRoutes = require('./routes/course_routes')
 const trainerRoutes = require('./routes/trainer_routes')
 const scheduleRoutes = require('./routes/schedule_routes')
 const traineeRoutes = require('./routes/trainee_routes')
+const locationRoutes = require('./routes/location_routes')
 
 
 dotenv.config()
@@ -35,6 +36,7 @@ app.use('/courseroutes', courseRoutes)
 app.use('/trainerroutes', trainerRoutes)
 app.use('/scheduleroutes', scheduleRoutes)
 app.use('/traineeroutes', traineeRoutes)
+app.use('/locationRoutes', locationRoutes)
 //app.use("view engine","jade");
 
 // connect to db

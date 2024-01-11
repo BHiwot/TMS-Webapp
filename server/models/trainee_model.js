@@ -27,9 +27,9 @@ const TraineeSchema = new Schema({
         type: String,
         required: true
     },
-    schedule: {
+    courseRequest: {
         type: String,
-          
+        required: true
     }
 }, { timestamps: true })
 

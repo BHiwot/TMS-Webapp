@@ -2,7 +2,7 @@ const orgDetail = ({ organization }) => {
 
     return (
       <div className="workout-details">
-        <p>{organization.organame}</p>
+        <h4>{organization.organame}</h4>
       </div>
     )
   }
